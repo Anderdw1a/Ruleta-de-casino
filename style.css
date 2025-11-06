@@ -1,0 +1,243 @@
+:root {
+    --main-color: #700202;
+    --verde-main: #1a472a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--verde-main);
+    max-width: 100%;
+}
+
+.container {
+    text-align: center;
+}
+
+.info-panel {
+    background-color: #0e3a1f;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 32px;
+    color: white;
+}
+
+.saldo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+}
+
+h1 {
+    color: white;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.roulette-wrapper {
+    position: relative;
+    margin: 0 auto 40px;
+}
+
+/* Flecha indicadora */
+.pointer {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 30px solid var(--main-color);
+    z-index: 10;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+/* Contenedor de la ruleta que gira */
+.roulette {
+    position: relative;
+    border-radius: 50%;
+    border: 10px solid var(--main-color);
+    background: #2a2a2a;
+    box-shadow: 0 0 30px #8b0303;
+    transition: transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+    width: 600px;
+    height: 600px;
+    overflow: hidden;
+}
+
+
+
+/* Círculo central */
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 32px;
+    z-index: 50;
+    border: 1px solid #000000;
+    background: #1f1f1f;
+}
+
+.sector {
+    position: absolute;
+    height: 50%;
+    width: 10%;
+    top: 0;
+    left: 50%;
+    transform-origin: 0% 100%;
+}
+
+.sector.red {
+    background: #e74c3c;
+}
+
+.sector.black {
+    background: #2c3e50;
+}
+
+.sector.green {
+    background: #27ae60;
+}
+
+.numero {
+    position: absolute;
+    width: 100%;
+    height: 148%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    text-indent: 16px;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+/* Botón */
+button {
+    background: #ffd700;
+    color: #192e55;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    margin: 8px;
+}
+
+button:hover:not(:disabled) {
+    background: #ffed4e;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.4);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.hidden {
+    display: none;
+}
+
+.apuestas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.negro {
+    background-color: #1b1b1b;
+}
+
+.rojo {
+    background-color: #aa0505;
+}
+
+.verde {
+    background-color: green;
+}
+
+.sinDinero {
+    color: white;
+    font-size: 15px;
+    padding: 16px;
+
+}
+
+/* .result {
+            /* background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            color: white;
+        }
+
+        .result h2 {
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+
+        .result-number {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .result-color {
+            font-size: 1.5em;
+            color: #ffd700;
+        } */
+/* Resultado */
+/* .result {
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid #ffd700;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 400px;
+    display: none;
+}
+
+.result h2 {
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+.result-number {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.result-color {
+    font-size: 24px;
+    margin-top: 10px;
+} */
